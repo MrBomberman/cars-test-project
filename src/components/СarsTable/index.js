@@ -4,7 +4,7 @@ import CarsTableHeader from "../CarsTableHeader";
 import CarTableRow from "../CarTableRow";
 
 const CarsTable = () => {
-    const [items, setItems] = useState([]);
+  const [items, setItems] = useState({cars: [], tariffs_list: []});
 
     useEffect(() => {
       getCarsApi()
@@ -20,7 +20,7 @@ const CarsTable = () => {
      </thead>
      <tbody>
      {items.cars.map((item, index) => (
-          <CarTableRow key={index} item={item} />
+          <CarTableRow key={index} item={item}/>
         ))}
      </tbody>
     </table>
