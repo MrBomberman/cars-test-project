@@ -1,8 +1,13 @@
-// import logo from './logo.svg';
 import './App.css';
 import CarsTable from './components/СarsTable';
+import SearchBar from './components/SearchBar';
+import { useState } from 'react';
+import ActiveCarPanel from './components/ActiveCarPanel';
 
 function App() {
+  const [search, setSearch] = useState('');
+  const [activeCar, setActiveCar] = useState(null)
+
   return (
     <div>
       <div className='main'>
@@ -12,10 +17,13 @@ function App() {
         <div className='mainContent'>
           <div className='sidebar'>SIDEBAR</div>
         <div className='content' >
-          <CarsTable/>
+          <SearchBar onChange={(value) => setSearch(value)}/>
+          <CarsTable search={search} onChangeActive={(value) => setActiveCar(value)}/>
+          <ActiveCarPanel activeCar={activeCar}/>
         </div>
         </div>
       </div>
+
       <div className='footer'>FOOTER</div>
     </div>
     // <div className="App">
