@@ -1,7 +1,7 @@
-import {useState} from 'react';
+// import {useState} from 'react';
 
 function CarTableRow({ item, tariffs, activeChange }) {
-    const [activeClass , setActiveClass] = useState(false)
+    // const [activeClass , setActiveClass] = useState(false)
 
     // const toggleClass = (e) => {
     //   if(e.target.className.includes('stylePanel')){
@@ -22,10 +22,8 @@ function CarTableRow({ item, tariffs, activeChange }) {
         if (!itemTariff) {
           return <td key={key}>-</td>;
         }
-        return <td className={activeClass ? 'active' : 'stylePanel'} onClick={() => {
-          activeChange(item.mark + ' ' + item.model + ' '+ itemTariff.year)
-
-          
+        return <td className={'stylePanel'} onClick={() => {
+          activeChange(item.mark + ' ' + item.model + ' ' + itemTariff.year)
         }
         }
         key={key}>{itemTariff.year}</td>

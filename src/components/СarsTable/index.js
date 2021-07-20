@@ -2,6 +2,8 @@ import getCarsApi from "../../services/getCarsApi";
 import { useState, useEffect } from "react";
 import CarsTableHeader from "../CarsTableHeader";
 import CarTableRow from "../CarTableRow";
+import arrowUp from '../../assets/images/arrow-up.png';
+import arrowDown from '../../assets/images/arrow-down.png';
 
 const CarsTable = ({search, onChangeActive}) => {
   const [data, setData] = useState({cars: [], tariffs_list: []});
@@ -20,11 +22,12 @@ const CarsTable = ({search, onChangeActive}) => {
     // console.log('sorted', sortedItemsUp)
     // console.log('sortedItems: ',sortedItems)
     // console.log(data)
+    let currentImage = sort ? arrowUp : arrowDown
 
     return (
     <table className='mainTable'>
      <thead>
-     <CarsTableHeader items={data.tariffs_list} sort={() => setSort(!sort)}/>
+     <CarsTableHeader items={data.tariffs_list} sort={() => setSort(!sort)} currentImage={currentImage}/>
      </thead>
      <tbody>
      {sortedItems.map((item, index) => (

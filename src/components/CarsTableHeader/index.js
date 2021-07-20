@@ -1,10 +1,10 @@
-import {useState} from 'react';
-import arrowUp from '../../assets/images/arrow-up.png'
 
-function CarsTableHeader({items, sort}) {
+function CarsTableHeader({items, sort, currentImage}) {
+  console.log(sort)
     return (
       <tr>
-        <th onClick={sort} className={`${'stylePanel'} ${'arrowClass'}`}>Марка и модель<img src={arrowUp} alt='arrowUp'/></th>
+        <th onClick={sort} className={`${'stylePanel'} ${'styleFilter'}`}>
+          Марка и модель<img className='styleImg' src={currentImage} alt='arrowUp'/></th>
         {items.map((item) => <th key={item}>{item}</th>)}
       </tr>
     );
