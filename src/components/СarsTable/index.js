@@ -3,24 +3,34 @@ import { useState, useEffect } from "react";
 import CarsTableHeader from "../CarsTableHeader";
 import CarTableRow from "../CarTableRow";
 
-const CarsTable = () => {
-  const [items, setItems] = useState({cars: [], tariffs_list: []});
+const CarsTable = ({search, onChangeActive}) => {
+  const [data, setData] = useState({cars: [], tariffs_list: []});
+  const [sort, setSort] = useState(true);
+  // const [activeCar, setActiveCar] = useState('')
 
     useEffect(() => {
       getCarsApi()
-        .then(data => setItems(data))
+        .then(response => setData(response))
     },[]);
 
-    
-    console.log(items)
+    const filteredItems = data.cars.slice(0,16).filter(item => item.mark.includes(search) || item.model.includes(search))
+    // console.log('filteredItems: ',filteredItems)
+    const sortedItems = filteredItems.sort(() => {return sort ? 1 : -1})
+    // const sortedItemsUp = sortedItemsDown.sort(() => {return sort === 'asc' ? 'desc': -1})
+    // console.log('sorted', sortedItemsUp)
+    // console.log('sortedItems: ',sortedItems)
+    // console.log(data)
+
     return (
-    <table>
+    <table className='mainTable'>
      <thead>
-     <CarsTableHeader item={items.tariffs_list}/>
+     <CarsTableHeader items={data.tariffs_list} sort={() => setSort(!sort)}/>
      </thead>
      <tbody>
-     {items.cars.map((item, index) => (
-          <CarTableRow key={index} item={item}/>
+     {sortedItems.map((item, index) => (
+          <CarTableRow key={index} item={item} 
+          tariffs={data.tariffs_list} 
+          activeChange={onChangeActive}/>
         ))}
      </tbody>
     </table>
@@ -28,5 +38,5 @@ const CarsTable = () => {
 }
 
 
-// {items.map((item, i) => (<div key={i}>{item.mark}</div>))}
+// {data.map((item, i) => (<div key={i}>{item.mark}</div>))}
 export default CarsTable;
