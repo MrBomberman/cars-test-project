@@ -49,28 +49,25 @@
   text-align: center;
   padding: 10px;
   display: flex;
-  
 }
 .searchBar input {
   width: 70%;
-  border: 1px solid #DEE5EB;
+  border: 1px solid #dee5eb;
   height: 42px;
   font-size: 20px;
   margin-right: 0;
 }
-.searchBar button{
+.searchBar button {
   width: 15%;
   color: white;
   margin-left: 0;
-  background-color:#7B8395;
+  background-color: #7b8395;
   height: 42px;
-
 }
 .infoOfCar {
   position: absolute;
   bottom: 0;
   padding: 10px;
-
 }
 .panel {
   margin-top: 15px;
@@ -83,43 +80,41 @@
   align-items: center;
   width: 85%;
   box-shadow: -1px 4px 9px 8px rgba(34, 60, 80, 0.2);
-  
 }
 .active {
   background-color: rgb(187, 113, 113);
   color: white;
 }
 
-.stylePanel:hover{
+.stylePanel:hover {
   cursor: pointer;
   color: white;
   background-color: rgb(187, 113, 113);
 }
-table{
-	border: 1px solid #eee;
-	table-layout: fixed;
+table {
+  border: 1px solid #eee;
+  table-layout: fixed;
 }
-.mainTable{
+.mainTable {
   width: 85%;
   box-shadow: -1px 4px 20px 3px rgba(34, 60, 80, 0.2);
 }
 table th {
-	font-weight: bold;
-	padding: 5px;
-	background: #efefef;
-	border: 1px solid #dddddd;
+  font-weight: bold;
+  padding: 5px;
+  background: #efefef;
+  border: 1px solid #dddddd;
 }
-table td{
-	padding: 5px 10px;
-	border: 1px solid #eee;
-	text-align: center
-  
+table td {
+  padding: 5px 10px;
+  border: 1px solid #eee;
+  text-align: center;
 }
-table tbody tr:nth-child(odd){
-	background: #fff;
+table tbody tr:nth-child(odd) {
+  background: #fff;
 }
-table tbody tr:nth-child(even){
-	background: #F7F7F7;
+table tbody tr:nth-child(even) {
+  background: #f7f7f7;
 }
 thead tr th:first-child,
 tbody tr td:first-child {
