@@ -19,6 +19,7 @@ function App() {
             <CarsTable
               search={search}
               onChangeActive={(value) => setActiveCar(value)}
+              activeCar={activeCar}
             />
             <ActiveCarPanel activeCar={activeCar} />
           </div>

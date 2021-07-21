@@ -1,7 +1,4 @@
-
-
-function CarTableRow({ item, tariffs, activeChange }) {
-
+function CarTableRow({ item, tariffs, activeChange, activeCar }) {
   return (
     <>
       <tr className="styleRow">
@@ -15,13 +12,15 @@ function CarTableRow({ item, tariffs, activeChange }) {
           if (!itemTariff) {
             return <td key={key}>-</td>;
           }
+          const currentValue =
+            item.mark + ' ' + item.model + ' ' + itemTariff.year;
           return (
             <td
-              className='stylePanel'
+              className={`stylePanel ${
+                activeCar === currentValue ? 'active' : ''
+              }`}
               onClick={() => {
-                activeChange(
-                  item.mark + ' ' + item.model + ' ' + itemTariff.year,
-                );
+                activeChange(currentValue);
               }}
               key={key}
             >

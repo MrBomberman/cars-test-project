@@ -5,7 +5,7 @@ import CarTableRow from '../CarTableRow';
 import arrowUp from '../../assets/images/arrow-up.png';
 import arrowDown from '../../assets/images/arrow-down.png';
 
-const CarsTable = ({ search, onChangeActive }) => {
+const CarsTable = ({ search, onChangeActive, activeCar }) => {
   const [data, setData] = useState({ cars: [], tariffs_list: [] });
   const [sort, setSort] = useState(true);
 
@@ -39,6 +39,7 @@ const CarsTable = ({ search, onChangeActive }) => {
             item={item}
             tariffs={data.tariffs_list}
             activeChange={onChangeActive}
+            activeCar={activeCar}
           />
         ))}
       </tbody>
