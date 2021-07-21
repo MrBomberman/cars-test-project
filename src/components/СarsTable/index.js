@@ -28,7 +28,7 @@ const CarsTable = ({ search, onChangeActive }) => {
       <thead>
         <CarsTableHeader
           items={data.tariffs_list}
-          sort={() => setSort(!sort)}
+          toggleSort={() => setSort(!sort)}
           currentImage={currentImage}
         />
       </thead>

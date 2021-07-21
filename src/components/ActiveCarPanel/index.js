@@ -1,11 +1,9 @@
 function ActiveCarPanel({ activeCar }) {
-  if (activeCar === null) {
-    return <div className="panel">Автомобиль не выбран</div>;
-  } else {
+    const text = activeCar === null ? 'Автомобиль не выбран' : `Выбран автомобиль ${activeCar} года выпуска`;
     return (
-      <div className="panel">Выбран автомобиль {activeCar} года выпуска</div>
+      <div className="panel">{text}</div>
     );
-  }
+  
 }
 
 export default ActiveCarPanel;

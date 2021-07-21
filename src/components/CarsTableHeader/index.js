@@ -1,7 +1,7 @@
-function CarsTableHeader({ items, sort, currentImage }) {
+function CarsTableHeader({ items, toggleSort, currentImage }) {
   return (
     <tr>
-      <th onClick={sort} className={`${'stylePanel'} ${'styleFilter'}`}>
+      <th onClick={toggleSort} className='stylePanel'>
         Марка и модель
         <img className="styleImg" src={currentImage} alt="arrowUp" />
       </th>

@@ -1,3 +1,5 @@
+
+
 function CarTableRow({ item, tariffs, activeChange }) {
 
   return (
@@ -15,7 +17,7 @@ function CarTableRow({ item, tariffs, activeChange }) {
           }
           return (
             <td
-              className={'stylePanel'}
+              className='stylePanel'
               onClick={() => {
                 activeChange(
                   item.mark + ' ' + item.model + ' ' + itemTariff.year,
